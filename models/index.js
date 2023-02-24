@@ -14,7 +14,7 @@ Orders.belongsTo(Customers, {
 });
 
 //Define relationship between Customers and Merchants tables
- Customers.hasMany(Merchants, {
+ Customers.hasOne(Merchants, {
     foreignKey: 'customer_id',
   });
   
