@@ -21,6 +21,16 @@ Merchants.init(
         key: 'id',
         }
       },
+      
+      product_id:{
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        references: {
+          model: 'products',
+          key: 'id',
+        }
+
+      },
       merchant_name: {
         type: DataTypes.STRING,
         allowNull: true,
@@ -29,7 +39,7 @@ Merchants.init(
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     modelName: 'merchants',
   }

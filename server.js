@@ -1,5 +1,5 @@
 const path = require('path');
-require('./models/index');
+const models = require('./models');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
@@ -44,6 +44,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
- sequelize.sync({ force: true }).then(() => {
+ sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
  });

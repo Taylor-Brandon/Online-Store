@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
+const bcrypt = require('bcrypt');
 
 class Customers extends Model {}
 
@@ -13,11 +14,11 @@ Customers.init(
     },
     username: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     email: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       unique: true,
       validate: {
         isEmail: true,
@@ -25,54 +26,63 @@ Customers.init(
     },
     password: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       validate: {
-        len: [6],
+        len: [8],
       },
     },
     first_name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     last_name: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     phone: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
 	 street: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
 	 state: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
 	 city: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
 	 country: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
 	 membership: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
-	 isMerchant: { 
+	 is_merchant: { 
 	 type: DataTypes.BOOLEAN, 
-	 allowNull: false, 
+	 allowNull: true, 
 	 defaultValue: false,
 	 },
   },
   {
+    hooks: {
+      beforeCreate: async (newUserData) => {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      }, 
+      beforeUpdate: async (updatedUserData) => {
+        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        return updatedUserData;
+      },
+    },
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
-    underscored: true,
     modelName: 'customers',
   }
 );

@@ -14,7 +14,7 @@ Orders.belongsTo(Customers, {
 });
 
 //Define relationship between Customers and Merchants tables
- Customers.hasMany(Merchants, {
+ Customers.hasOne(Merchants, {
     foreignKey: 'customer_id',
   });
   
@@ -38,6 +38,16 @@ Orders.belongsTo(Customers, {
   
   Order_Items.belongsTo(Orders, {
     foreignKey: 'order_id',
+  });
+
+
+   //Define relationship between Products and Merchants tables
+  Products.hasOne(Merchants, {
+    foreignKey: 'product_id',
+  });
+  
+  Merchants.belongsTo(Products, {
+    foreignKey: 'product_id',
   });
 
 
