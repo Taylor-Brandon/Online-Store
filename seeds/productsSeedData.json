@@ -1,0 +1,57 @@
+[
+    {
+        "make":"Macintosh",
+        "model":"M1",
+        "price": 5000,
+        "image": "../images/laptop-00.jpg"
+    },
+    {
+        "make":"Apple",
+        "model":"A1",
+        "price": 2000,
+        "image": "../images/laptop-01.jpg"
+    },
+    {
+        "make":"Dell",
+        "model":"D1",
+        "price": 1300,
+        "image": "../images/laptop-02.jpg"
+    },
+    {
+        "make":"Dell",
+        "model":"P1",
+        "price": 1200,
+        "image": "../images/laptop-03.jpg"
+    },
+    {
+        "make":"Laptop",
+        "model":"L1",
+        "price": 1500,
+        "image": "../images/laptop-04.jpg"
+    },
+    {
+        "make":"Macintosh",
+        "model":"M2",
+        "price": 100,
+        "image": "../images/laptop-05.jpg"
+    },
+    {
+        "make":"IBM",
+        "model":"I1",
+        "price": 100,
+        "image": "../images/laptop-06.jpg"
+    },
+    {
+        "make":"HP",
+        "model":"H1",
+        "price": 1600,
+        "image": "../images/laptop-07.jpg"
+    },
+    {
+        "make":"Apple MacAir",
+        "model":"A3",
+        "price": 3000,
+        "image": "../images/laptop-08.jpg"
+    }
+
+]

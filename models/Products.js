@@ -11,17 +11,6 @@ Products.init(
         primaryKey: true,
         autoIncrement: true,
       },
-      merchant_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-         references: {
-        // This is a reference to another model
-        model: 'merchants',
-  
-        // This is the column name of the referenced model
-        key: 'id',
-        }
-      },
       make: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -45,7 +34,7 @@ Products.init(
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: 'products',

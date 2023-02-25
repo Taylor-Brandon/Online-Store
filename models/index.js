@@ -41,5 +41,15 @@ Orders.belongsTo(Customers, {
   });
 
 
+   //Define relationship between Products and Merchants tables
+  Products.hasOne(Merchants, {
+    foreignKey: 'product_id',
+  });
+  
+  Merchants.belongsTo(Products, {
+    foreignKey: 'product_id',
+  });
+
+
 
   module.exports = { Customers, Merchants, Order_Items, Orders, Products }
