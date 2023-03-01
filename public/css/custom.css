@@ -37,17 +37,17 @@ body {
  
   .welcome-carousel-image1{
     box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.3);
-    background-image:url('../../images/laptop-03.jpg');
+    background-image:url('./images/laptop-03.jpg');
   }
 
   .welcome-carousel-image2{
     box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.3);
-    background-image:url('../../images/laptop-02.jpg');
+    background-image:url('./images/laptop-02.jpg');
   }
 
   .welcome-carousel-image3{
     box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.3);
-    background-image:url('../../images/laptop-07.jpg');
+    background-image:url('./images/laptop-07.jpg');
   }
 
   /* Shopping cart offcanvas */

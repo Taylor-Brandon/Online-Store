@@ -18,7 +18,7 @@ const contactRoutes = require('./contactRoutes');
 //router.use('/', homeRoutes);
 // router.use('/api', apiRoutes);
 
-router.use('/home', homeRoutes);
+router.use('/', homeRoutes);
 router.use('/login', loginRoutes);
 router.use('/alllaptops', alllaptopsRoutes);
 router.use('/done', doneRoutes);

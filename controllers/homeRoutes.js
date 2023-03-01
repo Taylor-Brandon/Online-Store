@@ -31,11 +31,9 @@ router.get('/', async (req, res) => {
 */
 
 
-router.get('/home', async (req, res) => {
+router.get('/', async (req, res) => {
 
-    res.render('home', {
-        logged_in: req.session.logged_in 
-    });
+    res.render('home');
 });
 
 
