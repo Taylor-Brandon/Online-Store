@@ -16,6 +16,28 @@ body {
   border-top: 0px;
 }
 
+
+.card img {
+ 
+  height: 200px;
+}
+
+/* sign up */
+
+.sign-up {
+
+  margin-top: 200px;
+}
+
+.submit-btn {
+margin-bottom: 20px;
+}
+
+/* login */
+
+.shopping-bag-icon {
+  margin-left: 120px;
+}
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
@@ -33,29 +55,29 @@ body {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    margin-top: 700px;
+    margin-top: 600px;
   }
  
   .carousel-control-prev {
-    margin-top: 700px;
+    margin-top: 600px;
   }
 
   .carousel-control-next {
-    margin-top: 700px;
+    margin-top: 600px;
   }
   .welcome-carousel-image1{
     box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.3);
-    background-image:url('../images/laptop-03.jpg');
+    background-image:url('../images/Infinix-Zero-Book-Ultra-5.jpg');
   }
 
   .welcome-carousel-image2{
     box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.3);
-    background-image:url('../images/laptop-02.jpg');
+    background-image:url('../images/Infinix-Zero-Book-Ultra-4.jpg');
   }
 
   .welcome-carousel-image3{
     box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.3);
-    background-image:url('../images/laptop-07.jpg');
+    background-image:url('../images/macbook-01.jpg');
   }
 
   /* Shopping cart offcanvas */
@@ -67,6 +89,25 @@ body {
 
 .jumbotron-ultraportables {
   background: url('../../images/Gaming-Keys2.png') no-repeat fixed;
+}
+
+.jumbotron-alllaptops{
+  background: url('../images/alllaptops-background.png');
+  margin-top: 1250px;
+}
+.jumbotron-ultrabooks {
+  background: url('../images/ultrabooks-background.png');
+  margin-top: 150px;
+}
+
+.jumbotron-macbooks {
+  background: url('../images/macbook-background.png');
+  margin-top: 150px;
+}
+
+.jumbotron-signup {
+  background: url('../images/signup-laptop-background.png');
+  margin-top: 540px;
 }
 
 .jumbotron-all-pies {
@@ -82,7 +123,8 @@ body {
 }
 
 .jumbotron-other {
-  background: url('../../images/Gaming-Keys2.png') ;
+  background: url('../../images/Gaming-Keys2.png');
+  margin-top: 50px;
 }
 
 .jumbotron-detail-apple-pie {
