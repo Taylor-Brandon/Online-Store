@@ -19,6 +19,7 @@ const contactRoutes = require('./contactRoutes');
 // router.use('/api', apiRoutes);
 
 router.use('/', homeRoutes);
+router.use('/home', homeRoutes);
 router.use('/login', loginRoutes);
 router.use('/alllaptops', alllaptopsRoutes);
 router.use('/done', doneRoutes);
@@ -28,7 +29,7 @@ router.use('/product-details', productDetailsRoutes);
 router.use('/signup', signupRoutes);
 router.use('/subscription', subscriptionRoutes);
 router.use('/ultrabooks', ultrabooksRoutes);
-router.use('/ultrportables', ultraportablesRoutes);
+router.use('/ultraportables', ultraportablesRoutes);
 router.use('/contact', contactRoutes);
 
 module.exports = router;
