@@ -13,6 +13,7 @@ const subscriptionRoutes = require('./subscriptionRoutes');
 const ultrabooksRoutes = require('./ultrabooksRoutes');
 const ultraportablesRoutes = require('./ultraportablesRoutes');
 const contactRoutes = require('./contactRoutes');
+const userRoutes = require('./userRoutes');
 
 
 //router.use('/', homeRoutes);
@@ -31,5 +32,6 @@ router.use('/subscription', subscriptionRoutes);
 router.use('/ultrabooks', ultrabooksRoutes);
 router.use('/ultraportables', ultraportablesRoutes);
 router.use('/contact', contactRoutes);
+router.use('/users', userRoutes);
 
 module.exports = router;
