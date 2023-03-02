@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Customer } = require('../models');
+const { Customers, Products } = require('../models');
 //const withAuth = require('../utils/auth');
 
 
@@ -33,7 +33,25 @@ router.get('/', async (req, res) => {
 
 router.get('/', async (req, res) => {
 
-    res.render('home');
+  try {
+
+    const homeProductsData = await Products.findAll({
+          where: {
+                   page: "home"
+                 }
+    });
+   
+      // Serialize data so the template can read it
+      const products = homeProductsData.map((products) => products.get({ plain: true }));
+
+      // Pass serialized data into template
+      res.render('home', { 
+        products
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+   // res.render('home');
 });
 
 
