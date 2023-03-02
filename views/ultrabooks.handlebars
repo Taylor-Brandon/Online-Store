@@ -14,12 +14,14 @@
                 </ol>
             </nav>
             <div class="row">
-                <div class="col-md-4">
+
+                {{#each products as |product|}}
+                  <div class="col-md-4">
                     <div class="card rounded mb-4 shadow-sm">
-                        <img class="card-img-top" src="images/products/blueberrycheesecakesmall.jpg">
+                        <img class="card-img-top" src={{product.image}}>
                         <div class="card-body">
-                            <h5 class="card-title">Blueberry cheese cake</h5>
-                            <p class="card-text">You'll love it! </p>
+                            <h5 class="card-title">{{product.make}} {{product.model}}</h5>
+                            <p class="card-text">Price: {{product.price}}</p>
                         </div>
                         <div class="card-footer">
                             <a href="product-details" class="btn btn-primary">View details</a>
@@ -27,32 +29,10 @@
 
                     </div>
                 </div>
+				{{/each}}
 
-                <div class="col-md-4">
-                    <div class="card rounded mb-4 shadow-sm">
-                        <img class="card-img-top" src="images/products/cheesecakesmall.jpg">
-                        <div class="card-body">
-                            <h5 class="card-title">Cheese cake</h5>
-                            <p class="card-text">Plain cheese cake. Plain pleasure.</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="product-details" class="btn btn-primary">View details</a>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-md-4">
-                    <div class="card rounded mb-4 shadow-sm">
-                        <img class="card-img-top" src="images/products/strawberrycheesecakesmall.jpg">
-                        <div class="card-body">
-                            <h5 class="card-title">Strawberry cheese cake</h5>
-                            <p class="card-text">You'll love it! </p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="product-details" class="btn btn-primary">View details</a>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </main>

@@ -13,15 +13,15 @@ Products.init(
       },
       make: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       model: {
           type: DataTypes.STRING,
-          allowNull: false,
+          allowNull: true,
       },
       price: {
           type: DataTypes.STRING,
-          allowNull: false,
+          allowNull: true,
       },
        serial_number: {
           type: DataTypes.UUID,
@@ -29,8 +29,12 @@ Products.init(
       },
        image: {
           type: DataTypes.STRING,
-          allowNull: false,
+          allowNull: true,
       },
+      page: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
   },
   {
     sequelize,
