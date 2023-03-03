@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const { Products } = require('../models');
 
+
  router.get('/', async (req, res) => {
     res.render('product-details');
-
 });
 
 
