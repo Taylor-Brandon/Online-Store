@@ -9,6 +9,14 @@ body {
   background-color: #a593c2 !important;
 }
 
+/* product-details img */
+
+.product-details-img {
+  width: 700px;
+  height: 500px;
+
+}
+
 /* cards */
 
 .card-footer {

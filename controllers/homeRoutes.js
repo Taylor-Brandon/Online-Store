@@ -26,4 +26,11 @@ router.get('/', async (req, res) => {
 
 
 
+
+// Route for handling requests to /product-details/:id/home
+router.get('/:id/home', (req, res) => {
+  res.redirect('home');
+});
+
+
 module.exports = router;
