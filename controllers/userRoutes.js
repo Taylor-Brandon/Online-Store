@@ -15,12 +15,12 @@ router.post('/', async (req, res) => {
   try {
     const customerData = await Customers.create(req.body);
 
-   // req.session.save(() => {
-     // req.session.user_id = customerData.id;
-    //  req.session.logged_in = true;
+   req.session.save(() => {
+     req.session.user_id = customerData.id;
+     req.session.logged_in = true;
 
-     // res.status(200).json(customerData);
-   // });
+     res.status(200).json(customerData);
+   });
     res.status(200).json(customerData);
   
   } catch (err) {
