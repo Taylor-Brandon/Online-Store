@@ -9,22 +9,20 @@
 
             <nav class="my-3 ms-3" style="--bs-breadcrumb-divider: '>';">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="home">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/home">Home</a></li>
                     <li class="breadcrumb-item"><a href="#">Laptops</a></li>
-                    <li class="breadcrumb-item"><a href="ultrabooks">Ultrabooks</a></li>
+                    <li class="breadcrumb-item"><a href="/ultrabooks">Ultrabooks</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Ultrabook</li>
                 </ol>
             </nav>
 
             <h1 class="fw-bolder">Your Selection
-                <small class="fw-normal fst-italic">To join in the industrial revolution, you needed to open a factory; in the Internet revolution, you need to open a laptop.
-
-                        Alexis Ohanian</small>
+                <small class="fw-normal fst-italic">To join in the industrial revolution, you needed to open a factory; in the Internet revolution, you need to open a laptop.  Alexis Ohanian</small>
             </h1>
 
             <div class="row ">
                 <div class="col-6 col-lg-8">
-                    <img src="./images/laptop-00.jpg" class="img-fluid rounded-1">
+                    <img src={{ product.image }} class="img-fluid rounded-1 product-details-img">
                 </div>
 
                 <div class="col-6 col-lg-4">
@@ -35,18 +33,15 @@
                     
                     <h3>Overview</h3>
                     <ul>
-                        <li>A</li>
-                        <li>B</li>
-                        <li>C</li>
-                        <li>F</li>
+                        <li><strong>Make:</strong> {{product.make}}</li>
+                        <li><strong>Model:</strong> {{product.model}}</li>
+                        <li><strong>Price:</strong> {{product.price}}</li>
                     </ul>
                     <div class="row">
 
-                        <div class="col-md-4">
-                            <strong>$1 million</strong>
-                        </div>
+                       
                         <div class="col-md-8">
-                            <a type="button" href="shoppingbasket.html" class="btn btn-success float-end"
+                            <a type="button" href="#" class="btn btn-success float-end"
                                 data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="shoppingCart">
                                 Add to cart
                             </a>
@@ -148,9 +143,9 @@
                                 <td class="col-sm-8 col-md-6">
                                     <div class="media">
                                         <img class="mr-3 thumbnail img-fluid" width="75"
-                                            src="./images/laptop-00.jpg" alt="pumpkin pie">
+                                            src={{ product.image }} alt="{{product.make}} {{produc.model}}">
                                         <div class="media-body">
-                                            <h5 class="mt-0 media-heading text-primary">Laptop A</h5>
+                                            <h5 class="mt-0 media-heading text-primary">{{ product.make }} {{ product.model }}</h5>
                                             <span>Status: </span><span class="text-success"><strong>In
                                                     Stock</strong></span>
                                         </div>
@@ -159,8 +154,7 @@
                                 <td class="col-sm-1 col-md-1" style="text-align: center">
                                     <input type="number" class="form-control" value="2">
                                 </td>
-                                <td class="col-sm-1 col-md-1 text-center"><strong>$1 million</strong></td>
-                                <td class="col-sm-1 col-md-1 text-center"><strong>$2 million</strong></td>
+                                <td class="col-sm-1 col-md-1 text-center"><strong>{{ product.price }}</strong></td>
                                 <td class="col-sm-1 col-md-1">
                                     <button type="button" class="btn btn-danger">
                                         X
@@ -213,7 +207,7 @@
                                     <h3>Total</h3>
                                 </td>
                                 <td class="text-center">
-                                    <h3><strong>$A lot + 10</strong></h3>
+                                    <h3><strong>$ 10</strong></h3>
                                 </td>
                                 <td></td>
 
@@ -231,7 +225,7 @@
                         </div>
                     </div>
                 </form>
-                <a type="button" href="order" class="m-1 btn btn-success">
+                <a type="button" href="/order" class="m-1 btn btn-success">
                     Go to order page
                 </a>
 

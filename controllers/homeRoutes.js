@@ -55,30 +55,12 @@ router.get('/', async (req, res) => {
 });
 
 
-router.post('/',  async (req, res) => {
-console.log(typeof req.body.imgURL);
-  try {
 
-      const productsData = await Products.findOne({
-            where: {
-                     image: req.body.imgURL
-                   }
-      });
-     
-        // Serialize data so the template can read it
-        const products = productsData.map((products) => products.get({ plain: true }));
-        console.log(products);
-        // Pass serialized data into template
-        res.render('product-details', { 
-          products
-        });
-      } catch (err) {
-        res.status(500).json(err);
-      }
 
+// Route for handling requests to /product-details/:id/home
+router.get('/:id/home', (req, res) => {
+  res.redirect('home');
 });
-
-
 
 
 module.exports = router;

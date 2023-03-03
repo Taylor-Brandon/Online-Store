@@ -1,17 +1,17 @@
 const viewProductDetailsHandler = async (event) => {
   event.preventDefault();
 
-  imgURL = event.target.parentNode.parentNode.querySelector('img').getAttribute('src');
+  const imgURL = event.target.parentNode.parentNode.querySelector('img').getAttribute('src');
    
     if (imgURL) {
-      const response = await fetch('/home', { 
+      const response = await fetch('/product-details', { 
         method: 'POST', 
         body: JSON.stringify({imgURL}),
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
-        document.location.replace('/product-details');
+        window.location.replace('/product-details');
       } else {
         alert(response.statusText);
       }
