@@ -1,7 +1,7 @@
 [
     {
-        "first_name":"John",
-        "last_name": "Doe",
+        "firstname":"John",
+        "lastname": "Doe",
         "email":"john.doe@gmail.com",
         "address": "21 Jump street",
         "city": "Brooklyn",
@@ -11,8 +11,8 @@
         "country": "USA"
     },
     {
-        "first_name":"Jane",
-        "last_name": "Doe",
+        "firstname":"Jane",
+        "lastname": "Doe",
         "email":"jane.doe@gmail.com",
         "address": "1203 East 21st street",
         "city": "Brooklyn",
@@ -22,8 +22,8 @@
         "country": "USA"
     },
     {
-        "first_name":"Elon",
-        "last_name": "Musk",
+        "firstname":"Elon",
+        "lastname": "Musk",
         "email":"elon.musk@tesla.com",
         "address": "2030 West 36th street",
         "city": "Brooklyn",

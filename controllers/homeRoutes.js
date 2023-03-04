@@ -16,6 +16,9 @@ router.get('/', async (req, res) => {
 
       // Pass serialized data into template
       res.render('home', { 
+        logged_in: req.session.logged_in,
+        firstname: req.session.firstname,
+        lastname: req.session.lastname,
         products
       });
     } catch (err) {

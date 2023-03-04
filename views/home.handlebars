@@ -53,8 +53,12 @@
         
 
         <div class="container history">
+            {{#if logged_in}}
+            <h4> Welcome {{firstname}} {{lastname}}!</h4>
+             {{/if}}
             <h2 class="pb-4 mb-2 mt-5">Laptops of the week</h2>
             <div class="row row-cols-1 row-cols-lg-2 row-cols-xxl-3 g-4">
+                
 
                 {{#each products as |product|}}
                  <div class="col">
@@ -71,12 +75,6 @@
                 </div>
           	{{/each}}
 
-
-
-
-
-
-             
 
             </div>
         </div>
