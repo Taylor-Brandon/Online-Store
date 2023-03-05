@@ -100,4 +100,39 @@ router.get('/c_membership', async (req, res) => {
       res.status(500).send('Internal server error');
     }
   });
+
+
+  router.get('/ivnt_by_brand', async (req, res) => {
+
+    try {
+
+      const macbook = await Products.count({
+        where: { make: "MacBook Pro" },
+      });
+      const dell = await Products.count({
+        where: { make: "Dell" },
+      });
+      const lenovo = await Products.count({
+        where: { make: "Lenovo ThinkPad" },
+      });
+      const acer = await Products.count({
+        where: { make: "Acer" },
+      });
+      const hp = await Products.count({
+        where: { make: "HP" },
+      });
+     
+
+     let data = JSON.stringify({"results" : [ macbook, dell, lenovo, acer, hp ]});
+
+      console.log(data);
+      res.json(data);
+    } catch (error) {
+      console.log(error);
+      res.status(500).send('Internal server error');
+    }
+  });
+
+
+
 module.exports = router;
