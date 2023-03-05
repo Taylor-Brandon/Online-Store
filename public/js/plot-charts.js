@@ -10,7 +10,7 @@ compare_membership = async () => {
       }];
   
     const layout = {
-      title: 'Membership Pie Chart',
+      title: 'Memberships',
       height: 300,
       width: 400
     };
@@ -33,7 +33,7 @@ compare_membership = async () => {
       }];
   
     const layout = {
-      title: 'State Pie Chart',
+      title: 'Customers By State',
       height: 300,
       width: 400
     };
@@ -54,7 +54,7 @@ compare_membership = async () => {
       }];
   
     const layout = {
-      title: 'Subscription Pie Chart',
+      title: 'Subscriptions',
       height: 300,
       width: 400
     };
