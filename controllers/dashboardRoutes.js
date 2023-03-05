@@ -9,9 +9,95 @@ router.get('/', async (req, res) => {
         firstname: req.session.firstname,
         lastname: req.session.lastname,
         Admin: req.session.Admin,
+        isDashboard: true,
         isPremiumMember: req.session.isPremiumMember
         });
 });
 
 
+
+router.get('/c_membership', async (req, res) => {
+
+    try {
+
+      const premium_users = await Customers.count({
+        where: { membership: "premium" },
+      });
+
+
+      const free_users = await Customers.count({
+        where: { membership: "free" },
+      });
+
+     let data = JSON.stringify({"results" : [premium_users, free_users ]});
+
+      console.log(data);
+      res.json(data);
+    } catch (error) {
+      console.log(error);
+      res.status(500).send('Internal server error');
+    }
+  });
+
+  router.get('/c_state', async (req, res) => {
+
+    try {
+
+      const ny_customers = await Customers.count({
+        where: { state: "New York" },
+      });
+
+      const tx_customers = await Customers.count({
+        where: { state: "Texas" },
+      });
+
+      const nj_customers = await Customers.count({
+        where: { state: "New Jersey" },
+      });
+
+      const cal_customers = await Customers.count({
+        where: { state: "California" },
+      });
+
+      const il_customers = await Customers.count({
+        where: { state: "Illinois" },
+      });
+
+      const ga_customers = await Customers.count({
+        where: { state: "Georgia" },
+      });
+
+     let data = JSON.stringify({"results" : [ny_customers, tx_customers, nj_customers, cal_customers, 
+        il_customers, ga_customers ]});
+
+      console.log(data);
+      res.json(data);
+    } catch (error) {
+      console.log(error);
+      res.status(500).send('Internal server error');
+    }
+  });
+
+  router.get('/c_subscription', async (req, res) => {
+
+    try {
+
+      const subscribers = await Customers.count({
+        where: { subscription: "Yes" },
+      });
+
+
+      const nonsubscribers = await Customers.count({
+        where: { subscription: "No" },
+      });
+
+     let data = JSON.stringify({"results" : [subscribers, nonsubscribers ]});
+
+      console.log(data);
+      res.json(data);
+    } catch (error) {
+      console.log(error);
+      res.status(500).send('Internal server error');
+    }
+  });
 module.exports = router;

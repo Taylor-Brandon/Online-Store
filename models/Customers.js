@@ -75,6 +75,10 @@ Customers.init(
         type: DataTypes.STRING,
         allowNull: true,
     },
+    subscription: {
+      type: DataTypes.STRING,
+      allowNull: true,
+  },
     isAdmin: { 
       type: DataTypes.BOOLEAN, 
       allowNull: true, 

@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="/css/bootstrap-override.css" >
     <link rel="stylesheet" href="/css/custom.css">
     <link rel="stylesheet" href="/css/sign-in.css">
+    
+        <!-- Render script for dashboard page only -->
+  {{#if isDashboard}}
+  <script src="https://cdn.plot.ly/plotly-2.18.2.min.js"></script>
+  <script src="/js/plot-charts.js"></script>
+  {{/if}}
 </head>
 
 <body>

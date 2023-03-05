@@ -9,6 +9,13 @@ body {
   background-color: #a593c2 !important;
 }
 
+
+.plot-body {
+
+  float:left;
+  margin-right: 23px;
+  margin-bottom: 20px;
+}
 /* product-details img */
 
 .product-details-img {
