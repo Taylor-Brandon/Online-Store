@@ -35,7 +35,11 @@
                     <ul>
                         <li><strong>Make:</strong> {{product.make}}</li>
                         <li><strong>Model:</strong> {{product.model}}</li>
+                        {{#if isPremiumMember}}
+                        <li><strong>Discounted Price:</strong> {{calculateDiscount product.price}}</li>
+                        {{else}}
                         <li><strong>Price:</strong> {{product.price}}</li>
+                        {{/if}}
                     </ul>
                     <div class="row">
 
@@ -154,8 +158,13 @@
                                 <td class="col-sm-1 col-md-1" style="text-align: center">
                                     <input type="number" class="form-control" value="2">
                                 </td>
+                                {{#if isPremiumMember}}
+                                <td class="col-sm-1 col-md-1 text-center"><strong>{{ calculateDiscount product.price }}</strong></td>
+                                <td class="col-sm-1 col-md-1 text-center"><strong>{{ calculateDiscount product.price }}</strong></td>
+                               {{else}}
                                 <td class="col-sm-1 col-md-1 text-center"><strong>{{ product.price }}</strong></td>
                                 <td class="col-sm-1 col-md-1 text-center"><strong>{{ product.price }}</strong></td>
+                               {{/if}}
                                 <td class="col-sm-1 col-md-1">
                                     <button type="button" class="btn btn-danger delete-btn">
                                         X
@@ -190,7 +199,13 @@
                                     <h5>Subtotal</h5>
                                 </td>
                                 <td class="text-center">
-                                    <h5><strong>{{ product.price }}</strong></h5>
+
+                             {{#if isPremiumMember}}
+                              <h5><strong>{{ calculateDiscount product.price }}</strong></h5>
+                            {{else}}
+                              <h5><strong>{{ product.price }}</strong></h5>
+                              {{/if}}
+                                    
                                 </td>
                                 <td></td>
                             </tr>
@@ -208,7 +223,12 @@
                                     <h3>Total</h3>
                                 </td>
                                 <td class="text-center">
-                                    <h3><strong>{{ product.price }} </strong></h3>
+                               {{#if isPremiumMember}}
+                                 <h3><strong>{{ calculateDiscount product.price }} </strong></h3>
+                                 {{else}}
+                                 <h3><strong>{{ product.price }} </strong></h3>
+                                {{/if}}
+                                  
                                 </td>
                                 <td></td>
 

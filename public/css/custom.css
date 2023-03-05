@@ -94,6 +94,10 @@ margin-bottom: 20px;
 
 /* Jumbotron */
 
+.jumbotron-subscription {
+  background: url('../images/subscription-background.png');
+  margin-top: 420px;
+}
 .jumbotron-order {
   background: url('../images/order-background.png');
   margin-top: 1100px;

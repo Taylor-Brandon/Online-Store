@@ -32,11 +32,14 @@ router.post('/', async (req, res) => {
       }
 
       console.log('You are now logged in!');
-
+      
+  
       req.session.save(() => {
         req.session.firstname = customerData.firstname;
         req.session.lastname = customerData.lastname;
         req.session.logged_in = true;
+        req.session.Admin = (customerData.isAdmin == '1') ? true : false;
+        req.session.isPremiumMember = (customerData.membership == "premium") ? true : false;
         res.status(200).json(customerData);   
       });
 

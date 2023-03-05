@@ -16,6 +16,11 @@ router.get('/:id', async (req, res) => {
    console.log(product);
 
   res.render('product-details', { 
+    logged_in: req.session.logged_in,
+    firstname: req.session.firstname,
+    lastname: req.session.lastname,
+    Admin: req.session.Admin,
+    isPremiumMember: req.session.isPremiumMember,
     product 
   });
  

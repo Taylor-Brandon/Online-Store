@@ -75,7 +75,12 @@ Customers.init(
         type: DataTypes.STRING,
         allowNull: true,
     },
-	 is_merchant: { 
+    isAdmin: { 
+      type: DataTypes.BOOLEAN, 
+      allowNull: true, 
+      defaultValue: false,
+      },
+	 isMerchant: { 
 	 type: DataTypes.BOOLEAN, 
 	 allowNull: true, 
 	 defaultValue: false,
