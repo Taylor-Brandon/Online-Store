@@ -94,6 +94,11 @@ margin-bottom: 20px;
 
 /* Jumbotron */
 
+.jumbotron-dashboard {
+  background: url('../images/dashboard-background.png');
+  margin-top: 100px;
+}
+
 .jumbotron-subscription {
   background: url('../images/subscription-background.png');
   margin-top: 420px;

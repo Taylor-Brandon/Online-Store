@@ -19,6 +19,7 @@ const loginFormHandler = async (event) => {
       document.location.replace('/home');
     } else {
       alert(response.statusText);
+      alert("If you haven't signed up then please sign up to create an account in order to login!")
     }
   }
 };
