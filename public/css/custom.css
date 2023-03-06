@@ -16,6 +16,11 @@ body {
   margin-right: 23px;
   margin-bottom: 20px;
 }
+
+/* product-details-list */
+.product-details-list{
+  list-style-type: none;
+}
 /* product-details img */
 
 .product-details-img {
@@ -141,7 +146,7 @@ margin-bottom: 20px;
 
 .jumbotron-product-detail {
   background: url('../images/product-details-background.png');
-  margin-top: 750px;
+  margin-top: 770px;
 }
 
 .jumbotron-other {

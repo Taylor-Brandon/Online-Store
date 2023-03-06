@@ -32,15 +32,30 @@
                         Pre-owned products sold by VERPER often include a limited warranty, and are backed by VERPUR's Return & Exchange Promise.</p>
                     
                     <h3>Overview</h3>
-                    <ul>
-                        <li><strong>Make:</strong> {{product.make}}</li>
-                        <li><strong>Model:</strong> {{product.model}}</li>
+                 <!--   <ul class="product-details-list">
+                       <b>Make:</b> <li id="make"> {{product.make}}</li>
+                       <b>Model:</b> <li id="model"> {{product.model}}</li>
                         {{#if isPremiumMember}}
-                        <li><strong>Discounted Price:</strong> {{calculateDiscount product.price}}</li>
+                       <b>Discounted Price:</b> <li id="discount-price"> {{calculateDiscount product.price}}</li>
                         {{else}}
-                        <li><strong>Price:</strong> {{product.price}}</li>
+                       <b>Price:</b> <li id="original-price"> {{product.price}}</li>
                         {{/if}}
-                    </ul>
+                    </ul> -->
+
+                      <table class="table table-hover">
+                        <tr>
+                            <td>
+                                <tr><td><b>Make:</b></td><td id="make">{{product.make}}</td></tr>
+                                <tr><td><b>Model:</b></td><td id="model">{{product.model}}</td></tr>
+                                {{#if isPremiumMember}}
+                                <tr><td><b>Discounted Price:</b></td><td id="discount-price">{{calculateDiscount product.price}}</td></tr>
+                                 {{else}}
+                                 <tr><td><b>Price:</b></td><td id="original-price">{{product.price}}</td></tr>
+                                 {{/if}}
+                            </td>
+                        </tr>
+                    </table>
+
                     <div class="row">
 
                        
@@ -142,7 +157,8 @@
                                 <th> </th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="shopping-cart-items">
+                            <!--
                             <tr>
                                 <td class="col-sm-8 col-md-6">
                                     <div class="media">
@@ -170,7 +186,8 @@
                                         X
                                     </button>
                                 </td>
-                            </tr>
+                            </tr> -->
+
                         <!--    <tr>
                                 <td class="col-sm-8 col-md-6">
                                     <div class="media">
@@ -194,7 +211,7 @@
                                     </button>
                                 </td>
                             </tr> -->
-                            <tr>
+                            <tr id="subtotal">
                                 <td colspan="3" class="text-right">
                                     <h5>Subtotal</h5>
                                 </td>
@@ -209,7 +226,7 @@
                                 </td>
                                 <td></td>
                             </tr>
-                            <tr>
+                            <tr id="shipping">
                                 <td colspan="3" class="text-right">
                                     <h5>Shipping</h5>
                                 </td>
@@ -218,7 +235,7 @@
                                 </td>
                                 <td></td>
                             </tr>
-                            <tr>
+                            <tr id="total">
                                 <td colspan="3" class="text-right">
                                     <h3>Total</h3>
                                 </td>
@@ -271,7 +288,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-danger">Yes</button>
+                        <button type="button" class="btn btn-danger" id="clear-shopping-cart">Yes</button>
                     </div>
                 </div>
             </div>
@@ -281,3 +298,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+
+<script src="/js/shoppingcart.js"></script>
