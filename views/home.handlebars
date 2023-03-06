@@ -20,10 +20,10 @@
                 </div>
                 <div class="carousel-item welcome-carousel-image2">
                     <div class="carousel-caption text-start">
-                        <h1>Discover our membership deals</h1>
+                        <h1>Discover our subscription deals</h1>
                         <p>Our Laptops delivered to your door.</p>
-                        <p><a class="btn btn-lg btn-primary" href="/signup" role="button">Sign up
-                                today</a></p>
+                        <p><a class="btn btn-lg btn-primary" href="/subscription" role="button">Subscription Deals
+                                </a></p>
                     </div>
                 </div>
                 <div class="carousel-item welcome-carousel-image3">
@@ -53,30 +53,69 @@
         
 
         <div class="container history">
+            {{#if logged_in}}
+            <h4> Welcome {{firstname}} {{lastname}}!</h4>
+             {{/if}}
             <h2 class="pb-4 mb-2 mt-5">Laptops of the week</h2>
             <div class="row row-cols-1 row-cols-lg-2 row-cols-xxl-3 g-4">
+                
 
-                {{#each products as |product|}}
+        <!--   {{#each products as |product|}}
                  <div class="col">
                     <div class="card rounded mb-4 shadow-sm">
+
                         <img class="card-img-top" src={{product.image}}>
                         <div class="card-body">
                             <h5 class="card-title">{{product.make}} {{product.model}}</h5>
-                            <p class="card-text">Price: {{product.price}} </p>
+                             {{#if isPremiumMember}}
+                            <p class="card-text">Discounted Price: {{ calculateDiscount 10000 }}</p>
+                            {{else}}
+                            <p class="card-text">Price: {{product.price}}</p>
+                            {{/if}}
                         </div>
                         <div class="card-footer">
                             <a href="/product-details/{{product.id}}" class="btn btn-primary view-details">View details</a>
                         </div>
                     </div>
                 </div>
-          	{{/each}}
+          	{{/each}} -->
 
+               {{#if isPremiumMember}}
+                {{#each products as |product|}}
+                 <div class="col">
+                    <div class="card rounded mb-4 shadow-sm">
 
+                        <img class="card-img-top" src={{product.image}}>
+                        <div class="card-body">
+                            <h5 class="card-title">{{product.make}} {{product.model}}</h5>
+                            <p class="card-text">Discounted Price: {{ calculateDiscount product.price }}</p>
+                           
+                        </div>
+                        <div class="card-footer">
+                            <a href="/product-details/{{product.id}}" class="btn btn-primary view-details">View details</a>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+                {{else}}
+                  {{#each products as |product|}}
+                 <div class="col">
+                    <div class="card rounded mb-4 shadow-sm">
 
+                        <img class="card-img-top" src={{product.image}}>
+                        <div class="card-body">
+                            <h5 class="card-title">{{product.make}} {{product.model}}</h5>
+                            <p class="card-text">Price: {{ product.price }}</p>
+                           
+                        </div>
+                        <div class="card-footer">
+                            <a href="/product-details/{{product.id}}" class="btn btn-primary view-details">View details</a>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+                 {{/if}}
 
-
-
-             
 
             </div>
         </div>

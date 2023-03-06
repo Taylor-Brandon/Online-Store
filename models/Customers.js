@@ -75,7 +75,16 @@ Customers.init(
         type: DataTypes.STRING,
         allowNull: true,
     },
-	 is_merchant: { 
+    subscription: {
+      type: DataTypes.STRING,
+      allowNull: true,
+  },
+    isAdmin: { 
+      type: DataTypes.BOOLEAN, 
+      allowNull: true, 
+      defaultValue: false,
+      },
+	 isMerchant: { 
 	 type: DataTypes.BOOLEAN, 
 	 allowNull: true, 
 	 defaultValue: false,
