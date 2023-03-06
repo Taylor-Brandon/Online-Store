@@ -1,4 +1,4 @@
- ![computerDog](https://unsplash.com/photos/gySMaocSdqs)
+ ![Laptops](./images/alllaptops-background.png))
  
 # Welcome to VERPUR!!
 Where you can buy and sell used laptops.
@@ -14,30 +14,25 @@ This website uses several modules to execute it’s functioning.
 * Sequelize
 * Handlebars
 * Express Sessions
+* Plotly
 
-
-"dependencies": {
-    "bcrypt": "^5.0.0",
-    "connect-session-sequelize": "^7.0.4",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^5.2.0",
-    "express-session": "^1.17.1",
-    "mysql2": "^2.2.5",
-    "sequelize": "^6.3.5"
-  },
 
 # Install:
 Begin with installing the dependency package, which will allow express, mysql, sequelize, handlebars, and sessions to run. In the command line type the following;
 
 <kbd>npm install</kbd>
 
-then,
+<kdb>mysql -u root -p</kdb>
 
+set up database
+<kdb>DROP DATABASE IF EXISTS store_db</kdb>
+<kdb>CREATE DATABASE store_db</kdb>
+
+then start your server by running
 <kdb>npm start</kdb>
 
 **Example:**
-*Add screen recording*
+![screen-gif](./images/install.gif)
 
 
 # Usage:
@@ -48,6 +43,6 @@ then,
 
 **To Navigate Website:**  The user will be able to navigate the website using the menu bar at the top of the page.  Each option will direct the user to the chosen page.
 
-**Example:**
-*Add screen recording*
+
+
 
