@@ -11,9 +11,8 @@ const deleteButtons = document.querySelectorAll('.delete-btn');
 const img_url = document.querySelector(".product-details-img").getAttribute('src');
 const make = document.querySelector('#make').textContent;
 const model = document.querySelector('#model').textContent;
-const discount_price = (document.querySelector('#discount-price')) ? document.querySelector('#discount-price').textContent : "blank";
-const original_price = (document.querySelector('#original-price')) ? document.querySelector('#original-price').textContent : "blank";
-
+var discount_price = document.querySelector('#discount-price');
+var original_price = document.querySelector('#original-price');
 
 check_if_last_item = function() {
     const row = (document.querySelector('#cart-items')) ? true : false;
@@ -198,9 +197,20 @@ add_to_shoppingcart = function (event) {
     deleteEl1.setAttribute("class","col-sm-1 col-md-1");
 
     // Set the text content of each column
-    
-    priceEl1.textContent = (discount_price) ? original_price : discount_price;
-    totalEl1.textContent = (discount_price) ? original_price : discount_price;
+
+     if (discount_price) {
+         
+        priceEl1.textContent = discount_price.textContent;
+        totalEl1.textContent = discount_price.textContent;
+     }
+     
+     if (original_price) {
+        priceEl1.textContent =  original_price.textContent;
+        totalEl1.textContent =  original_price.textContent;
+     }
+
+
+    console.log(priceEl1.textContent);
 
     const mediaDivEl1 = document.createElement('div');
     const imgEl1 = document.createElement('img');
