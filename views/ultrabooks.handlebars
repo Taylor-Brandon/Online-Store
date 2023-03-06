@@ -15,21 +15,41 @@
             </nav>
             <div class="row">
 
+                {{#if isPremiumMember}}
                 {{#each products as |product|}}
-                  <div class="col-md-4">
+                 <div class="col">
                     <div class="card rounded mb-4 shadow-sm">
+
                         <img class="card-img-top" src={{product.image}}>
                         <div class="card-body">
                             <h5 class="card-title">{{product.make}} {{product.model}}</h5>
-                            <p class="card-text">Price: {{product.price}}</p>
+                            <p class="card-text">Discounted Price: {{ calculateDiscount product.price }}</p>
+                           
                         </div>
                         <div class="card-footer">
                             <a href="/product-details/{{product.id}}" class="btn btn-primary view-details">View details</a>
                         </div>
-
                     </div>
                 </div>
-				{{/each}}
+                {{/each}}
+                {{else}}
+                  {{#each products as |product|}}
+                 <div class="col">
+                    <div class="card rounded mb-4 shadow-sm">
+
+                        <img class="card-img-top" src={{product.image}}>
+                        <div class="card-body">
+                            <h5 class="card-title">{{product.make}} {{product.model}}</h5>
+                            <p class="card-text">Price: {{ product.price }}</p>
+                           
+                        </div>
+                        <div class="card-footer">
+                            <a href="/product-details/{{product.id}}" class="btn btn-primary view-details">View details</a>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+                 {{/if}}
 
 
 

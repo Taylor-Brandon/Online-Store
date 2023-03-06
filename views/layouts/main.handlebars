@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="/css/bootstrap-override.css" >
     <link rel="stylesheet" href="/css/custom.css">
     <link rel="stylesheet" href="/css/sign-in.css">
+    
+        <!-- Render script for dashboard page only -->
+  {{#if isDashboard}}
+  <script src="https://cdn.plot.ly/plotly-2.18.2.min.js"></script>
+  <script src="/js/plot-charts.js"></script>
+  {{/if}}
 </head>
 
 <body>
@@ -49,7 +55,11 @@
                                 <li><a class="dropdown-item" href="/alllaptops">All Laptops</a></li>
                             </ul>
                         </li>
-                       
+                         {{#if logged_in}}
+                        <li class="nav-item">
+                            <a class="nav-link" id="logout" href="#">Logout</a>
+                        </li>
+                        {{else}}
                         <li class="nav-item">
                             <a class="nav-link " href="/signup">
                                Sign Up
@@ -60,9 +70,19 @@
                                 Login
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{/if}}
+                          <li class="nav-item">
                             <a class="nav-link" href="/contact">Contact</a>
                         </li>
+                           <li class="nav-item">
+                            <a class="nav-link" id="subscription" href="/subscription">Subscriptions</a>
+                        </li>
+                        {{#if Admin}}
+                          <li class="nav-item">
+                            <a class="nav-link" href="/dashboard">Dashboard</a>
+                        </li>
+                        {{/if}}
+                     
                     </ul>
                 </div>
             </div>
@@ -71,7 +91,12 @@
     </header>
   <!-- Render the sub layout -->
 {{{ body }}}
-    
+
+
+     <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>

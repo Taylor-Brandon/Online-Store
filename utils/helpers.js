@@ -19,4 +19,18 @@ module.exports = {
         return `<span for="img" aria-label="gear">👨‍💻</span>`;
       }
     },
+
+    // helper function to calculate discounted price
+    calculateDiscount: (originalPrice) => {
+      let percentage = 0.1;
+      const priceString = originalPrice.replace(/[^0-9.-]+/g,"");
+      const priceInteger = parseInt(priceString);
+      let discount = priceInteger * percentage;
+      let newDiscountPrice = priceInteger - discount;
+      return `${ "$" + parseInt(newDiscountPrice).toLocaleString()}`;
+    },
+
   };
+
+
+    

@@ -1,9 +1,26 @@
 const sequelize = require('../config/connection');
 const { Customers, Products } = require('../models');
-
+const bcrypt = require('bcrypt');
 const customersSeedData = require('./customersSeedData.json');
 const productsSeedData = require('./productsSeedData.json');
 
+
+
+//Encrypt password for seed customers
+customersSeedData.forEach(user => {
+  const salt = 10;
+  const plainPassword = user.password;
+  bcrypt.hash(plainPassword, salt, (err, hashedPassword) => {
+    if (err) {
+      console.error(err);
+    }else{
+      user.password = hashedPassword;
+    }
+  });
+});
+
+
+//Insert customer data into database
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 

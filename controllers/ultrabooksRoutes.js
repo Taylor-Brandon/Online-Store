@@ -16,6 +16,11 @@ router.get('/', async (req, res) => {
   
         // Pass serialized data into template
         res.render('ultrabooks', { 
+          logged_in: req.session.logged_in,
+          firstname: req.session.firstname,
+          lastname: req.session.lastname,
+          Admin: req.session.Admin,
+          isPremiumMember: req.session.isPremiumMember,
           products
         });
       } catch (err) {

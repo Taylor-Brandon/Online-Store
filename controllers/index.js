@@ -14,6 +14,7 @@ const ultrabooksRoutes = require('./ultrabooksRoutes');
 const ultraportablesRoutes = require('./ultraportablesRoutes');
 const contactRoutes = require('./contactRoutes');
 const userRoutes = require('./userRoutes');
+const dashboardRoutes = require('./dashboardRoutes');
 
 
 //router.use('/', homeRoutes);
@@ -33,5 +34,6 @@ router.use('/ultrabooks', ultrabooksRoutes);
 router.use('/ultraportables', ultraportablesRoutes);
 router.use('/contact', contactRoutes);
 router.use('/users', userRoutes);
+router.use('/dashboard', dashboardRoutes);
 
 module.exports = router;
